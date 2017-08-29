@@ -31,5 +31,6 @@
 (def swiper                 (js/require "react-native-swiper"))
 (def vector-icons           (js/require "react-native-vector-icons/Ionicons"))
 (def webview-bridge         (js/require "react-native-webview-bridge"))
+(def react-native-fcm       (js/require "react-native-fcm"))
 
 

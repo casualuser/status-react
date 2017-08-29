@@ -1,5 +1,12 @@
 rootProject.name = 'StatusIm'
-
+include ':react-native-udp'
+project(':react-native-udp').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-udp/android')
+include ':react-native-tcp'
+project(':react-native-tcp').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-tcp/android')
+include ':react-native-mapbox-gl'
+project(':react-native-mapbox-gl').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mapbox-gl/android')
+include ':react-native-fcm'
+project(':react-native-fcm').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fcm/android')
 include ':app'
 include ':react-native-http-bridge'
 project(':react-native-http-bridge').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-http-bridge/android')
@@ -41,9 +48,6 @@ project(':react-native-image-crop-picker').projectDir = new File(settingsDir, '.
 
 include ':react-native-webview-bridge'
 project(':react-native-webview-bridge').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webview-bridge/android')
-
-include ':reactnativemapboxgl'
-project(':reactnativemapboxgl').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mapbox-gl/android')
 
 include ':react-native-config'
 project(':react-native-config').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-config/android')

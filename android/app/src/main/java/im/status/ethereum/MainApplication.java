@@ -7,6 +7,10 @@ import com.bitgo.randombytes.RandomBytesPackage;
 import com.cboy.rn.splashscreen.SplashScreenReactPackage;
 import com.centaurwarchief.smslistener.SmsListenerPackage;
 import com.facebook.react.ReactApplication;
+import com.tradle.react.UdpSocketsModule;
+import com.peel.react.TcpSocketsModule;
+import com.mapbox.reactnativemapboxgl.ReactNativeMapboxGLPackage;
+import com.evollu.react.fcm.FIRMessagingPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -25,7 +29,6 @@ import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import im.status.ethereum.module.StatusPackage;
 import io.realm.react.RealmReactPackage;
 import me.alwx.HttpServer.HttpServerReactPackage;
-import com.mapbox.reactnativemapboxgl.ReactNativeMapboxGLPackage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +46,10 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
         protected List<ReactPackage> getPackages() {
             List<ReactPackage> packages = new ArrayList<ReactPackage>(Arrays.asList(
                     new MainReactPackage(),
+                    new UdpSocketsModule(),
+                    new TcpSocketsModule(),
+                    new ReactNativeMapboxGLPackage(),
+                    new FIRMessagingPackage(),
                     new HttpServerReactPackage(),
                     new NfcReactNativePackage(),
                     new SplashScreenReactPackage(),
@@ -61,9 +68,8 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
                     new ImageResizerPackage(),
                     new PickerPackage(),
                     new WebViewBridgePackage(BuildConfig.DEBUG),
-                    new ReactNativeMapboxGLPackage(),
                     new ReactNativeConfigPackage()
-            ));
+                                                                                    ));
 
             if (!BuildConfig.DEBUG) {
                 packages.add(new RNInstabugReactnativePackage("b239f82a9cb00464e4c72cc703e6821e", MainApplication.this, "shake"));
